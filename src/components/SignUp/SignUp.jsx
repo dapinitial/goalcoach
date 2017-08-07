@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { firebaseApp } from '../../firebase';
 import './SignUp.css';
 
@@ -44,7 +45,7 @@ class SignUp extends Component {
             onClick={() => this.signUp()}>Sign Up</button>
         </div>
         <div>{this.state.error.message}</div>
-
+        <div><Link to={'/signin'}>Already a user? Sign In instead</Link></div>
       </div>
     )
   }
