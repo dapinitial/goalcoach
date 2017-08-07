@@ -12,10 +12,10 @@ class SignIn extends Component {
     }
   }
 
-  signUp() {
+  signIn() {
     console.log('this.state', this.state);
     const { email, password } = this.state;
-    firebaseApp.auth().createUserWithEmailAndPassword(email, password)
+    firebaseApp.auth().signInWithEmailAndPassword(email, password)
       .catch(error => {
         this.setState({error})
       })
@@ -41,7 +41,7 @@ class SignIn extends Component {
           <button
             className="btn btn-primary"
             type="button"
-            onClick={() => this.signUp()}>Sign In</button>
+            onClick={() => this.signIn()}>Sign In</button>
         </div>
         <div>{this.state.error.message}</div>
 
